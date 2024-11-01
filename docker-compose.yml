@@ -1,0 +1,29 @@
+version: "3.4"
+
+services:
+  react:
+    build:
+      context: .
+      dockerfile: docker/local/web/Dockerfile
+    image: get-mobil-cs:latest
+    container_name: get-mobil-cs
+    stdin_open: true
+    tty: true
+    restart: always
+    volumes:
+      - ./public:/app/public:rw
+      - ./src:/app/src:rw
+      - ./.env:/app/.env:rw
+      - ./eslint.config.js:/app/eslint.config.js:rw
+      - ./index.html:/app/index.html:rw
+      - ./tsconfig.json:/app/tsconfig.json:rw
+      - ./tsconfig.node.json:/app/tsconfig.node.json:rw
+      - ./.prettierrc:/app/.prettierrc:rw
+      - ./vite.config.ts:/app/vite.config.ts:rw
+    ports:
+      - "9802:5173"
+
+networks:
+  default:
+    external:
+      name: local-network
