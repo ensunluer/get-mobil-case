@@ -30,7 +30,8 @@ export const Items = ({ product }: Props) => {
   const originalPrice = price / (1 - discountPercentage / 100);
 
   return (
-    <ItemContainer onClick={openDetail} disabled={!stock}>
+    <ItemContainer onClick={openDetail} disabled={!stock} tabIndex={0} onKeyPress={(e) => e.key === 'Enter' && openDetail()} >
+      {!stock && <OutOfStockMessage>Out of stock</OutOfStockMessage>}
       <ImageWrapper>
       <Image
         src={imageSrc}
@@ -63,7 +64,6 @@ const ItemContainer = styled.div<{ disabled: boolean }>`
     border-radius: 8px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
     transition: 0.2s ease all;
-    opacity: ${props => (props.disabled ? 0.5 : 1)};
     cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
     pointer-events: ${props => (props.disabled ? 'none' : 'auto')};
 
@@ -136,4 +136,16 @@ const Description = styled.p`
     -webkit-box-orient: vertical;
     overflow: hidden;
     -webkit-line-clamp: 2;
+`;
+
+const OutOfStockMessage = styled.div`
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    z-index: 9;
+    background-color: #dc2020;
+    text-align: center;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 8px;
 `;

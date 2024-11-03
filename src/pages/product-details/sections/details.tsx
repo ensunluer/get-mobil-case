@@ -106,10 +106,11 @@ const Info = styled.div`
     span {
         font-size: 1.5em;
         font-weight: 700;
+        color: #004aad;
 
         &:last-child {
-            font-size: 0.9em;
-            color: #b0b0b0;
+            font-size: 1em;
+            color: #14161b;
             text-decoration: line-through;
         }
     }
@@ -124,8 +125,4 @@ const PriceContainer = styled.div`
     align-items: center;
     gap: 8px;
     margin: 4px 0;
-
-    span {
-        color: #004aad;
-    }
 `;
