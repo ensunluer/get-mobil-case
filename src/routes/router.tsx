@@ -1,8 +1,8 @@
 import { lazy, Suspense } from 'react';
 import { Navigate, Outlet, useRoutes } from 'react-router-dom';
 
-import { SplashScreen } from '../components/splash-screen';
 import Layout from '../layout/layout.tsx';
+import { SplashScreen } from '../components/splash-screen';
 
 // PRODUCT
 const ProductList = lazy(() => import('../pages/product-list/index.tsx'));
@@ -24,7 +24,7 @@ export default function Router() {
         </Suspense>
       ),
       children: [
-        { path: 'product/list', element: <ProductList /> },
+        { path: '/', element: <ProductList /> },
         { path: 'product/:category/:id', element: <ProductDetails /> },
         { path: '500', element: <Page500 /> },
         { path: '404', element: <Page404 /> },
