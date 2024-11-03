@@ -20,7 +20,12 @@ export default function Layout({ children }: Props) {
 
 const Root = styled.section`
     max-width: 1200px;
+    padding: 0 24px;
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet || '768px'}) {
+        padding: 0 2px;
+    }
 `;
