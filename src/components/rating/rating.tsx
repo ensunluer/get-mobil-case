@@ -11,7 +11,7 @@ const Rating: FC<RatingProps> = ({ rating }) => {
   return (
     <StarsContainer>
       {[...Array(5)].map((_, index) => (
-        <Star key={index} filled={index < roundedRating}>
+        <Star key={index} filled={index < roundedRating ? 'true' : 'false'}>
           ★
         </Star>
       ))}
@@ -32,12 +32,12 @@ const StarsContainer = styled.div`
     }
 `;
 
-const Star = styled.div<{ filled: boolean }>`
+const Star = styled.div<{ filled: string }>`
     width: 16px;
     height: 16px;
     display: block;
     margin-right: 4px;
-    color: ${(props) => (props.filled ? '#ff8000' : '#e0e0e0')};
+    color: ${(props) => (props.filled === 'true' ? '#ff8000' : '#e0e0e0')};
 `;
 
 export default Rating;

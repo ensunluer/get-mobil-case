@@ -9,9 +9,9 @@ import { Error } from './error.tsx';
 
 export function ProductList() {
 
-  const { data: productsbase, loading, error } = useAppSelector(state => state.product.list);
+  const { data: product, loading, error } = useAppSelector(state => state.product.list);
 
-  const products = productsbase.filter(item => {
+  const products = product.filter(item => {
     return item.category === 'mobile-accessories' || item.category === 'laptops' || item.category === 'tablets';
   });
 

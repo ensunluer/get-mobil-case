@@ -17,7 +17,7 @@ export function Comments({ comments }: Props) {
             <ReviewerName>{comment.reviewerName}</ReviewerName>
             <Section>
               <Rating rating={comment.rating} />
-              <div>{new Date(comment.date).toLocaleDateString()}</div>
+              <span>{new Date(comment.date).toLocaleDateString()}</span>
             </Section>
           </Header>
           <CommentBody>{comment.comment}</CommentBody>
@@ -55,7 +55,7 @@ const Section = styled.div`
     display: flex;
     align-items: center;
     gap: 12px;
-    color: #888;
+    color: #14161b;
     margin-left: auto;
     font-size: 0.9em;
 `;
