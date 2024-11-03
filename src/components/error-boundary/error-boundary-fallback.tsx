@@ -8,20 +8,30 @@ const FallbackContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 40px;
     width: 100% !important;
-    height: 100vh;
-    background-color: #f8d7da;
-    color: #721c24;
-    padding: 20px;
-    border: 1px solid #f5c6cb;
-    border-radius: 8px;
-    text-align: center;
+    height: 80vh;
+    text-align: center
 `;
 
 const ErrorMessage = styled.h2`
     margin: 0;
     font-size: 24px;
 `;
+
+const ErrorDetail = styled.p`
+    margin: 0;
+    max-width: 600px;
+    font-size: 20px;
+`;
+
+const Button = styled.button`
+    margin: 0;
+    border: revert;
+    background: revert;
+    font-size: 20px;
+`;
+
 
 /**
  * ErrorBoundaryFallback component that displays a fallback UI
@@ -38,7 +48,8 @@ const ErrorBoundaryFallback: React.FC = (): JSX.Element => {
   return (
     <FallbackContainer>
       <ErrorMessage>{messages.error.error}</ErrorMessage>
-      <button onClick={goHome}>{messages.constants.goHome}</button>
+      <ErrorDetail>{messages.error.support}</ErrorDetail>
+      <Button onClick={goHome}>{messages.constants.goHome}</Button>
     </FallbackContainer>
   );
 };

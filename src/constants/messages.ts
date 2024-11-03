@@ -1,15 +1,16 @@
 const messages = {
   constants: {
-    goHome: 'Ana Sayfa',
+    goHome: 'Return to home',
   },
   error: {
-    error: 'Bir Hata Oluştu',
+    error: 'Oops! Sth went wrong',
+    support: 'Oops! Something went wrong. Please try refreshing the page, or click below to go back to the homepage. If the problem persists, contact support.',
   },
   warning: {
-    warn: 'Bir hata oluşabilir',
+    warn: '',
   },
   success: {
-    success: 'Bir hata oluşmadı',
+    success: '',
   },
 };
 
