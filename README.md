@@ -1,5 +1,30 @@
 # React + TypeScript + Vite
 
+## Quick Start Guide
+
+### Using Yarn
+
+1. **Install Dependencies**:
+   ```bash
+   yarn install
+
+2. **Run Project**:
+   ```bash
+   yarn run dev
+
+3. **Run With Test Project**:
+   ```bash
+   yarn run test:dev
+   
+### Using docker
+
+1. **Run Project**:
+   ```bash
+   make start
+      
+### Live URL
+You can access the live project at this [link](https://get-mobil-case.vercel.app/)
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
