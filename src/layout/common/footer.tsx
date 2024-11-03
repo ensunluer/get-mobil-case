@@ -14,10 +14,13 @@ const FooterWrapper = styled.header`
     margin-top: 12px;
     justify-content: center;
     border-top: 1px solid #ccc;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    padding: 8px 0;
 `;
 
-const Copy = styled.h1`
-    font-size: 1em;
-    margin: 0.6em 0;
-    display: inline-block;
+const Copy = styled.h3`
+    width: 160px;
+    height: auto;
+    color: #004aad;
 `;
