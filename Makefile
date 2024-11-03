@@ -14,7 +14,7 @@ stop:
 	rm -rf node_modules
 
 reload:
-	docker-compose restart react
+	docker compose restart react
 
 copy:
 	rm -rf node_modules
